@@ -5,3 +5,7 @@ export const calcTotal = (answers) => answers.reduce((sum, { points }) => sum + 
 export const countCorrect = (answers) => answers.filter(({ chosen, correct }) => chosen === correct).length;
 export const getStars = (correctCount) => STARS.find(({ min }) => correctCount >= min);
 export const formatStars = (stars) => `${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}`;
+
+export const sortHistory = (history) => [...history].sort(
+  (a, b) => b.score - a.score || b.correctCount - a.correctCount
+);

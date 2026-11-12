@@ -21,9 +21,9 @@ const Result = () => {
         <table>
           <thead><tr><th>Câu</th><th>Bạn chọn</th><th>Đáp án đúng</th><th>Còn lại</th><th>Điểm</th></tr></thead>
           <tbody>
-            {answers.map(({ id, chosen, correct, timeLeft, points }, index) => (
+            {answers.map(({ id, originalId, chosen, correct, timeLeft, points }, index) => (
               <tr key={id} className={chosen === correct ? 'correct' : 'incorrect'}>
-                <td>Câu {index + 1}</td>
+                <td>Câu {index + 1}{id !== originalId && ` (đổi sang câu ${id})`}</td>
                 <td>{chosen === null ? '—' : LETTERS[chosen]}</td>
                 <td>{LETTERS[correct]}</td>
                 <td>{timeLeft} giây</td>

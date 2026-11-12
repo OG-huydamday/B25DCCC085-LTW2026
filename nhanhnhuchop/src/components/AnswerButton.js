@@ -1,7 +1,8 @@
 import { LETTERS } from '../data';
 
-const AnswerButton = ({ index, option, revealed, correct, chosen, onChoose }) => {
+const AnswerButton = ({ index, option, revealed, pointed, correct, chosen, onChoose }) => {
   let className = 'answer';
+  if (pointed) className += ' pointed';
   if (revealed && index === correct) className += ' correct';
   if (revealed && index === chosen && index !== correct) className += ' incorrect';
 

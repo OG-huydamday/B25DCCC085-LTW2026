@@ -1,7 +1,7 @@
 import { LETTERS, LEVELS } from '../data';
 import AnswerButton from './AnswerButton';
 
-const QuestionCard = ({ number, total, question, outcome, onChoose }) => (
+const QuestionCard = ({ number, total, question, outcome, pointer, onChoose }) => (
   <section>
     <h2>Câu {number}/{total} · {LEVELS[question.level]}</h2>
     <p className="question-text">{question.question}</p>
@@ -12,6 +12,7 @@ const QuestionCard = ({ number, total, question, outcome, onChoose }) => (
           index={index}
           option={option}
           revealed={Boolean(outcome)}
+          pointed={!outcome && index === pointer}
           correct={question.answer}
           chosen={outcome?.chosen}
           onChoose={onChoose}
