@@ -45,3 +45,19 @@ button[aria-pressed="true"], .primary { background: var(--accent); border-color:
 .correct { background: #d9f5e3; color: #145834; }
 .incorrect { background: #fce3e7; color: #8d1f35; }
 .back { margin-left: .6rem; }
+
+.rules { padding-inline-start: 1.25rem; line-height: 1.7; }
+.countdown { text-align: center; font-size: clamp(5rem, 20vw, 10rem); font-weight: 800; color: var(--accent); margin-block: 1rem; }
+.answer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.answer { text-align: left; min-height: 3.5rem; overflow-wrap: anywhere; }
+.answer:not(:disabled):hover { background: #eef4fa; }
+.timer p { margin-top: 0; }
+.time-track { height: .65rem; background: #e6ebf0; border-radius: 10px; overflow: hidden; }
+.time-fill { height: 100%; background: #178048; transition: width .15s; }
+.time-fill.urgent { background: #bf2c37; }
+.score-panel { display: grid; gap: .4rem; margin-top: 1.25rem; }
+.awarded { color: #167044; font-weight: 700; }
+.stars { color: #915300; letter-spacing: .1em; }
+@media (prefers-reduced-motion: reduce) {
+  .time-fill { transition: none; }
+}
